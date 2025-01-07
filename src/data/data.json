@@ -1,18 +1,18 @@
 {
   "Header": {
-    "title": "We are a Landing Page",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "title": "Standing Strong with Educated Voices",
+    "paragraph": "Offering coaching support for recommendation letters, essays, and motivation letters, along with workshops to empower Afghanistan's youth."
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "Given the challenges in Afghanistan, where the young generation faces a lack of proper education, soft skills, and access to trustworthy, well-trained scholarship advisors, there is a critical need for an agency to bridge this gap. Our mission is to address these needs through insightful and practical solutions.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      "Empower Afghanistan",
+      "awareness in terms of education",
+      "scholarship coaching",
+      "opportunities"
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
+      "capacity building",
       "Lorem ipsum dolor",
       "Exercitation ullamco",
       "Lorem ipsum dolor"
@@ -68,33 +68,33 @@
   "Services": [
     {
       "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Coaching for Academic Documents",
+      "text": "Provide personalized guidance for writing recommendation letters, essays, and motivation letters."
     },
     {
       "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Development Workshops",
+      "text": "Conduct workshops to enhance soft skills, leadership, and critical thinking."
     },
     {
       "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Scholarship Guidance",
+      "text": "Offer reliable support and mentorship for scholarship applications, from research to submission."
     },
     {
       "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Bridging Educational Gaps",
+      "text": "Address the lack of proper education by creating tailored programs to empower Afghanistan’s youth."
     },
     {
       "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Empowering Young Leaders",
+      "text": "Inspire and equip the young generation to become proactive leaders and changemakers."
     },
     {
       "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Community Building",
+      "text": "Build a network of educated and skilled individuals committed to contributing to Afghanistan’s future."
     }
   ],
   "Testimonials": [
