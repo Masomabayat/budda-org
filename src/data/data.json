@@ -67,32 +67,32 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
+      "icon": "fa fa-file-text-o",
       "name": "Coaching for Academic Documents",
       "text": "Provide personalized guidance for writing recommendation letters, essays, and motivation letters."
     },
     {
-      "icon": "fa fa-cart-arrow-down",
+      "icon": "fa fa-users",
       "name": "Development Workshops",
       "text": "Conduct workshops to enhance soft skills, leadership, and critical thinking."
     },
     {
-      "icon": "fa fa-cloud-download",
+      "icon": "fa fa-university",
       "name": "Scholarship Guidance",
       "text": "Offer reliable support and mentorship for scholarship applications, from research to submission."
     },
     {
-      "icon": "fa fa-language",
+      "icon": "fa fa-graduation-cap",
       "name": "Bridging Educational Gaps",
       "text": "Address the lack of proper education by creating tailored programs to empower Afghanistan’s youth."
     },
     {
-      "icon": "fa fa-plane",
+      "icon": "fa fa-lightbulb-o",
       "name": "Empowering Young Leaders",
       "text": "Inspire and equip the young generation to become proactive leaders and changemakers."
     },
     {
-      "icon": "fa fa-pie-chart",
+      "icon": "fa fa-globe",
       "name": "Community Building",
       "text": "Build a network of educated and skilled individuals committed to contributing to Afghanistan’s future."
     }
