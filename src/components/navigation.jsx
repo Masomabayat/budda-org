@@ -1,6 +1,4 @@
 import React from "react";
-/* import Image from 'next/image';
- */
 
 export const Navigation = (props) => {
   return (
@@ -20,12 +18,7 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
-            {/* <img
-              src="/img/BuddaLogo.png" // Path relative to the `public` folder
-              alt="Budda Logo"
-              width={150} // Adjust width as needed
-              height={50} // Adjust height as needed
-            /> */}
+            Budda Bridg Foundaion
           </a>{" "}
         </div>
 
