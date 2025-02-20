@@ -132,29 +132,24 @@
   "Team": [
     {
       "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
+      "name": "Afifa Iqbalzada",
+      "job": "Program director"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
+      "name": "Shokria Mohsini",
+      "job": "Media Manager"
     },
     {
       "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
+      "name": "Sakina Naimi",
+      "job": "HR manager and Program director"
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
+    "address": "Online",
+    "phone": "+8801404034039",
+    "email": "budhabridge.24@gmail.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
@@ -162,23 +157,18 @@
   "Features": [
     {
       "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Providing online boot camps",
+      "text": "To educate people with new knowledge and skills and lead positive changes in Afghanistan. Also help them to be ready for the job sectors."
     },
     {
       "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Scholarship registration services",
+      "text": "Providing support in filling up scholarship aplication and giving them instruction to do it by themselves."
     },
     {
       "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-    },
-    {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Coaching services",
+      "text": "Providing a period of coaching and a coach for students who wants to apply for scholarships in abroad.Coaches will help I  writing SOP, Motivation letter, cover letter, and essential essays for applying for scholarships.Students need to book a time and choose a coach based on the level of scholarship (Phd, Master, Bachelor, and high school) that they want to apply."
     }
   ]
 }
