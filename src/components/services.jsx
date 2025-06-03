@@ -7,8 +7,7 @@ export const Services = (props) => {
         <div className="section-title">
           <h2>Our Services</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+          Budda Bridge provides educational support, scholarship coaching, and capacity-building programs to help individuals unlock opportunities and lead meaningful change.
           </p>
         </div>
         <div className="row">

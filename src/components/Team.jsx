@@ -4,7 +4,7 @@ export const Team = (props) => {
   return (
     <div id="team" className="text-center">
       <div className="container">
-        <div className="col-md-8 col-md-offset-2 section-title">
+        <div id="team-title" className="col-md-8 col-md-offset-2 section-title">
           <h2>Meet the Team</h2>
           <p>
           Our team members are doing their best to provide you with the greatest support possible.

@@ -7,15 +7,15 @@
     "paragraph": "Given the challenges in Afghanistan, where the young generation faces a lack of proper education, soft skills, and access to trustworthy, well-trained scholarship advisors, there is a critical need for an agency to bridge this gap. Our mission is to address these needs through insightful and practical solutions.",
     "Why": [
       "Empower Afghanistan",
-      "awareness in terms of education",
-      "scholarship coaching",
-      "opportunities"
+      "Awareness in terms of education",
+      "Scholarship coaching",
+      "Opportunities"
     ],
     "Why2": [
-      "capacity building",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "Capacity building",
+      "Educate to Empower",
+      "Scholarship Success",
+      "Building Capacity, Creating Change"
     ]
   },
   "Gallery": [
@@ -149,10 +149,10 @@
   "Contact": {
     "address": "Online",
     "phone": "+8801404034039",
-    "email": "budhabridge.24@gmail.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "email": "info@budhabridge.org",
+    "facebook": "https://www.facebook.com/share/1BBjpVzgkD/",
+    "linkedin": "https://www.linkedin.com/in/buddha-bridge-foundation?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjK3U0RNhQcyO5ydMDlKvNQ%3D%3D",
+    "youtube": "http://www.youtube.com/@BuddhaBridgeFoundation"
   },
   "Features": [
     {
@@ -169,6 +169,29 @@
       "icon": "fa fa-group",
       "title": "Coaching services",
       "text": "Providing a period of coaching and a coach for students who wants to apply for scholarships in abroad.Coaches will help I  writing SOP, Motivation letter, cover letter, and essential essays for applying for scholarships.Students need to book a time and choose a coach based on the level of scholarship (Phd, Master, Bachelor, and high school) that they want to apply."
+    }
+  ],
+  "PastActivities": [
+    {
+      "id": 1,
+      "title": "Community Cleanup Day",
+      "image": "/images/cleanup.jpg",
+      "description": "Volunteers gathered to clean up the local park and streets. Over 50 bags of trash were collected!",
+      "video": "/videos/cleanup.mp4"
+    },
+    {
+      "id": 2,
+      "title": "Tree Planting Drive",
+      "image": "/images/tree-planting.jpg",
+      "description": "Our green initiative led to the planting of over 100 trees in the city’s northern district.",
+      "video": "/videos/tree-planting.mp4"
+    },
+    {
+      "id": 3,
+      "title": "Youth Coding Workshop",
+      "image": "/images/coding-workshop.jpg",
+      "description": "We hosted a hands-on coding workshop for students, introducing them to web development and design.",
+      "video": "/videos/coding-workshop.mp4"
     }
   ]
 }
