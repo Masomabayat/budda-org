@@ -1,8 +1,45 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 export const Navigation = (props) => {
+  const location = useLocation();
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    if (location.pathname !== "/past-activities") {
+      setShowNav(true);
+      return;
+    }
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setShowNav(true);
+        setLastScrollY(window.scrollY);
+        return;
+      }
+      if (window.scrollY < lastScrollY) {
+        setShowNav(true);
+      } else {
+        setShowNav(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line
+  }, [location.pathname, lastScrollY]);
+
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+    <nav
+      id="menu"
+      className={`navbar navbar-default navbar-fixed-top${showNav ? "" : " nav-hidden"}`}
+      style={{
+        transition: "top 0.3s",
+        top: showNav ? 0 : "-80px",
+        zIndex: 9999,
+        position: "fixed",
+        width: "100%"
+      }}
+    >
       <div className="container">
         {/* <div className="navbar-header"> */}
           <button
@@ -17,13 +54,13 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
+          <NavLink className="navbar-brand page-scroll" to="/">
             <img
               src="/img/budda-logo.png"
               alt="Budda Logo"
               style={{ width: "auto", height: "inherit" }}
             />
-          </a>{" "}
+          </NavLink>{" "}
         {/* </div> */}
 
         <div
@@ -72,11 +109,26 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href="#past-activities" className="page-scroll">
+              <NavLink
+                to="/past-activities"
+                className={({ isActive }) =>
+                  `page-scroll${isActive ? " active" : ""}`
+                }
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        borderBottom: "linear-gradient(to right, #004138 0%, #359E88 100%)",
+                        color: "#608dfd",
+                        fontWeight: 700,
+                        textDecoration: "none"
+                      }
+                    : {}
+                }
+              >
                 Past Activities
-              </a>
+              </NavLink>
             </li>
-          </ul>
+          </ul>   
         </div>
       </div>
     </nav>

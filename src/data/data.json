@@ -170,28 +170,5 @@
       "title": "Coaching services",
       "text": "Providing a period of coaching and a coach for students who wants to apply for scholarships in abroad.Coaches will help I  writing SOP, Motivation letter, cover letter, and essential essays for applying for scholarships.Students need to book a time and choose a coach based on the level of scholarship (Phd, Master, Bachelor, and high school) that they want to apply."
     }
-  ],
-  "PastActivities": [
-    {
-      "id": 1,
-      "title": "Community Cleanup Day",
-      "image": "/images/cleanup.jpg",
-      "description": "Volunteers gathered to clean up the local park and streets. Over 50 bags of trash were collected!",
-      "video": "/videos/cleanup.mp4"
-    },
-    {
-      "id": 2,
-      "title": "Tree Planting Drive",
-      "image": "/images/tree-planting.jpg",
-      "description": "Our green initiative led to the planting of over 100 trees in the city’s northern district.",
-      "video": "/videos/tree-planting.mp4"
-    },
-    {
-      "id": 3,
-      "title": "Youth Coding Workshop",
-      "image": "/images/coding-workshop.jpg",
-      "description": "We hosted a hands-on coding workshop for students, introducing them to web development and design.",
-      "video": "/videos/coding-workshop.mp4"
-    }
   ]
 }
