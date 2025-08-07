@@ -159,6 +159,9 @@ hr {
   margin: 70px;
   text-align: center;
 }
+.container-past-activities {
+  padding-right: 1px;
+}
 .section-title h2 {
   position: relative;
   margin-top: 10px;

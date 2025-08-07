@@ -4,7 +4,7 @@ import React from "react";
 export const PastActivities = (props) => {
   return (
     <div id="past-activities" className="activities-container">
-      <div className="container">
+      <div className="container-past-activities">
         <div className="section-title mt-5">
           <h2 className="past-activities-title">Past Activities</h2>
           <p>
