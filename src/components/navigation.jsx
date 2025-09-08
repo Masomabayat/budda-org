@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-export const Navigation = (props) => {
+export const Navigation = ({ onOpenRegistrationForm }) => {
   const location = useLocation();
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -104,7 +104,14 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href="#regestration" className="page-scroll">
+              <a 
+                href="#" 
+                className="page-scroll"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onOpenRegistrationForm();
+                }}
+              >
                 Regestration Form
               </a>
             </li>

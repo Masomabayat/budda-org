@@ -12,6 +12,7 @@ import { Team } from "./components/Team";
 // import { PastActivities } from "./components/pastActivities";
 import PastActivitiesPage from "./pages/PastActivitiesPage";
 import { Contact } from "./components/contact";
+import RegistrationForm from "./components/regestrationForm";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 
@@ -45,13 +46,27 @@ const HomePage = () => {
 };
 
 const App = () => {
+  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
+
+  const openRegistrationForm = () => {
+    setIsRegistrationFormOpen(true);
+  };
+
+  const closeRegistrationForm = () => {
+    setIsRegistrationFormOpen(false);
+  };
+
   return (
     <Router>
-      <Navigation />
+      <Navigation onOpenRegistrationForm={openRegistrationForm} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/past-activities" element={<PastActivitiesPage />} />
       </Routes>
+      <RegistrationForm 
+        isOpen={isRegistrationFormOpen} 
+        onClose={closeRegistrationForm} 
+      />
     </Router>
   );
 };
