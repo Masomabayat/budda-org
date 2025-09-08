@@ -1,5 +1,5 @@
-import { useState } from "react";
-import emailjs from "emailjs-com";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import React from "react";
 
 const initialState = {
@@ -9,6 +9,11 @@ const initialState = {
 };
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const [emailStatus, setEmailStatus] = useState({
+    type: "", // 'success' or 'error'
+    message: ""
+  });
+  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,19 +24,60 @@ export const Contact = (props) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
+    console.log("Form data:", { name, email, message });
+    console.log("Form element:", form.current);
     
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
+    // Clear any previous status messages
+    setEmailStatus({ type: "", message: "" });
+    
+    // Validate form data before sending
+    if (!name || !email || !message) {
+      setEmailStatus({
+        type: "error",
+        message: "Please fill in all required fields."
+      });
+      return;
+    }
     
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
+      .sendForm("service_836p7z1", "template_724rydr", form.current, {
+        publicKey: "m6E7PhPY3DgAIpm0F",
+      })
       .then(
         (result) => {
-          console.log(result.text);
+          console.log("EmailJS Success:", result);
+          setEmailStatus({
+            type: "success",
+            message: "Thank you! Your message has been sent successfully."
+          });
           clearState();
         },
         (error) => {
-          console.log(error.text);
+          console.log("EmailJS Error Details:", error);
+          console.log("Error status:", error.status);
+          console.log("Error text:", error.text);
+          
+          let errorMessage = "Sorry, there was an error sending your message. Please try again.";
+          
+          // Provide more specific error messages based on status codes
+          if (error.status === 400) {
+            errorMessage = "Bad request. Please check your EmailJS configuration (Service ID, Template ID, or Public Key).";
+          } else if (error.status === 401) {
+            errorMessage = "Unauthorized. Please check your EmailJS public key.";
+          } else if (error.status === 404) {
+            errorMessage = "Service or template not found. Please check your EmailJS service and template IDs.";
+          } else if (error.text && error.text.includes("Invalid template ID")) {
+            errorMessage = "Template ID is not configured. Please set up your EmailJS template.";
+          } else if (error.text && error.text.includes("Invalid service ID")) {
+            errorMessage = "Service ID is invalid. Please check your EmailJS service configuration.";
+          } else if (error.text && error.text.includes("Invalid public key")) {
+            errorMessage = "Public key is invalid. Please check your EmailJS public key.";
+          }
+          
+          setEmailStatus({
+            type: "error",
+            message: errorMessage
+          });
         }
       );
   };
@@ -48,7 +94,7 @@ export const Contact = (props) => {
                   get back to you as soon as possible.
                 </p>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <form ref={form} name="sentMessage" validate onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -91,7 +137,11 @@ export const Contact = (props) => {
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
-                <div id="success"></div>
+                {emailStatus.message && (
+                  <div className={`alert ${emailStatus.type === 'success' ? 'alert-success' : 'alert-danger'}`} style={{marginBottom: '20px'}}>
+                    {emailStatus.message}
+                  </div>
+                )}
                 <button type="submit" className="btn btn-custom btn-lg">
                   Send Message
                 </button>
