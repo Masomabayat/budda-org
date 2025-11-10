@@ -68,7 +68,7 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-            {location.pathname !== "/registration" && location.pathname !== "/past-activities" && (
+            {location.pathname !== "/registration" && location.pathname !== "/past-activities" && location.pathname !== "/story" && (
               <>
                 <li>
                   <a href="#features" className="page-scroll">
@@ -115,6 +115,16 @@ export const Navigation = (props) => {
                 }
               >
                 Registration Form
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/story"
+                className={({ isActive }) =>
+                  `page-scroll${isActive ? " active" : ""}`
+                }
+              >
+                Story
               </NavLink>
             </li>
             <li>

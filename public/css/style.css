@@ -111,6 +111,7 @@ hr {
   padding: 8px 2px;
   border-radius: 0;
   margin: 9px 20px 0;
+  position: relative;
 }
 #menu.navbar-default .navbar-nav > li > a:after {
   display: block;
@@ -134,6 +135,20 @@ hr {
 .navbar-default .navbar-nav > .active > a:after,
 .navbar-default .navbar-nav > .active > a:hover:after,
 .navbar-default .navbar-nav > .active > a:focus:after {
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -1px !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: linear-gradient(to right, #004138 0%, #359E88 100%) !important;
+  content: "" !important;
+  transition: width 0.2s !important;
+}
+/* Active state for NavLink components (Registration Form, Story, Past Activities) */
+#menu.navbar-default .navbar-nav > li > a.page-scroll.active:after,
+#menu.navbar-default .navbar-nav > li > a.page-scroll.active:hover:after,
+#menu.navbar-default .navbar-nav > li > a.page-scroll.active:focus:after {
   display: block !important;
   position: absolute !important;
   left: 0 !important;
@@ -623,7 +638,7 @@ label {
 
 .past-activities-page {
   min-height: 100vh;
-  background: linear-gradient(120deg, #f6f6f6 60%, #e9ecef 100%);
+  background: linear-gradient(120deg, #ffffff 60%, #ffffff 100%);
   padding-top: 100px;
   padding-bottom: 60px;
 }
@@ -686,7 +701,7 @@ label {
   left: 2%;
 }
 #past-activities{
-  background: #f6f6f6;
+  background: #ffffff;
 }
 .past-activities-title {
   margin-top: 60px;

@@ -11,6 +11,7 @@ import { Services } from "./components/services";
 import { Team } from "./components/Team";
 // import { PastActivities } from "./components/pastActivities";
 import PastActivitiesPage from "./pages/PastActivitiesPage";
+import StoryPage from "./pages/StoryPage";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -53,6 +54,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/past-activities" element={<PastActivitiesPage />} />
+        <Route path="/story" element={<StoryPage />} />
       </Routes>
     </Router>
   );
