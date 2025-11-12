@@ -58,7 +58,6 @@ export const Navigation = (props) => {
             <img
               src="/img/budda-logo.png"
               alt="Budda Logo"
-              style={{ width: "auto", height: "inherit" }}
             />
           </NavLink>{" "}
         {/* </div> */}
