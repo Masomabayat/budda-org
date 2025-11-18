@@ -152,9 +152,7 @@ export const Story = (props) => {
       <div className="container-story">
         <div className="section-title mt-5">
           <h2 className="story-title">Our Story</h2>
-          <p>
-            The true story of girls in this land of sorrows.
-          </p>
+    
         </div>
 
         {/* Language Tabs */}

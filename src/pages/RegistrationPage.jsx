@@ -363,7 +363,141 @@ export default function RegistrationPage() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="row">
+      {/* Application Options Section */}
+      <div className="row" style={{ marginBottom: 40 }}>
+        <div className="col-md-8 col-md-offset-2">
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h3 className="panel-title" style={{ color: "#000" }}>Application Options</h3>
+            </div>
+            <div className="panel-body" style={{ padding: "20px" }}>
+              <div className="row">
+                <div className="col-md-4 col-sm-12" style={{ marginBottom: 15 }}>
+                  <a
+                    href="#student-registration-form"
+                    className="btn btn-primary"
+                    style={{
+                      background: "linear-gradient(to right, #004138 0%, #359E88 100%)",
+                      border: "none",
+                      padding: "15px 20px",
+                      fontSize: "13px",
+                      borderRadius: "6px",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      textAlign: "center",
+                      width: "100%",
+                      minHeight: "67px",
+                      transition: "transform 0.2s, box-shadow 0.2s",
+                      lineHeight: "1.4",
+                      whiteSpace: "normal",
+                      wordWrap: "break-word"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "translateY(-2px)";
+                      e.target.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "translateY(0)";
+                      e.target.style.boxShadow = "none";
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("student-registration-form")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    Student Registration Form
+                  </a>
+                </div>
+                <div className="col-md-4 col-sm-12" style={{ marginBottom: 15 }}>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdWmuw12PpgdEi9XjStn8dnI0EL6vG3Zt6-XHLW0Jx3UenhjA/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                    style={{
+                      background: "linear-gradient(to right, #004138 0%, #359E88 100%)",
+                      border: "none",
+                      padding: "15px 20px",
+                      fontSize: "13px",
+                      borderRadius: "6px",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      textAlign: "center",
+                      width: "100%",
+                      minHeight: "60px",
+                      transition: "transform 0.2s, box-shadow 0.2s",
+                      lineHeight: "1.4",
+                      whiteSpace: "normal",
+                      wordWrap: "break-word"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "translateY(-2px)";
+                      e.target.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "translateY(0)";
+                      e.target.style.boxShadow = "none";
+                    }}
+                  >
+                    Scholarship Advisor / Mentor Application
+                  </a>
+                </div>
+                <div className="col-md-4 col-sm-12" style={{ marginBottom: 15 }}>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfdC3-bxizY2XBcIPw6P-BwzjYNJAJv2whCPYiR8feiSDEbIQ/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                    style={{
+                      background: "linear-gradient(to right, #004138 0%, #359E88 100%)",
+                      border: "none",
+                      padding: "15px 20px",
+                      fontSize: "13px",
+                      borderRadius: "6px",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      textAlign: "center",
+                      width: "100%",
+                      minHeight: "60px",
+                      transition: "transform 0.2s, box-shadow 0.2s",
+                      lineHeight: "1.4",
+                      whiteSpace: "normal",
+                      wordWrap: "break-word"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "translateY(-2px)";
+                      e.target.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "translateY(0)";
+                      e.target.style.boxShadow = "none";
+                    }}
+                  >
+                    Program Coordinator Application
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit} className="row" id="student-registration-form">
         <div className="col-md-8 col-md-offset-2">
           <div className="panel panel-default">
             <div className="panel-heading"><h3 className="panel-title" style={{ color: "#000" }}>Basic Personal Information</h3></div>
