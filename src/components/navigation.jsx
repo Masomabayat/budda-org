@@ -92,7 +92,7 @@ export const Navigation = ({ onOpenRegistrationForm }) => {
           <NavLink className="navbar-brand page-scroll" to="/">
             <img
               src="/img/budda-logo.png"
-              alt="Budda Logo"
+              alt="Budha Logo"
             />
           </NavLink>
           <button

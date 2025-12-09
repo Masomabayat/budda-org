@@ -13,6 +13,7 @@ import { Team } from "./components/Team";
 import PastActivitiesPage from "./pages/PastActivitiesPage";
 import StoryPage from "./pages/StoryPage";
 import { Contact } from "./components/contact";
+import { Footer } from "./components/footer";
 import RegistrationForm from "./components/regestrationForm";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -49,6 +50,11 @@ const HomePage = () => {
 
 const App = () => {
   const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
+  const [landingPageData, setLandingPageData] = useState({});
+
+  useEffect(() => {
+    setLandingPageData(JsonData);
+  }, []);
 
   const openRegistrationForm = () => {
     setIsRegistrationFormOpen(true);
@@ -67,6 +73,7 @@ const App = () => {
         <Route path="/past-activities" element={<PastActivitiesPage />} />
         <Route path="/story" element={<StoryPage />} />
       </Routes>
+      <Footer data={landingPageData.Contact} />
       <RegistrationForm 
         isOpen={isRegistrationFormOpen} 
         onClose={closeRegistrationForm} 

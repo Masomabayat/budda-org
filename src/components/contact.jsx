@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import React from "react";
 
@@ -14,6 +14,16 @@ export const Contact = (props) => {
     message: ""
   });
   const form = useRef();
+
+  // Auto-dismiss success message after 5 seconds
+  useEffect(() => {
+    if (emailStatus.type === 'success') {
+      const timer = setTimeout(() => {
+        setEmailStatus({ type: "", message: "" });
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [emailStatus.type]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -137,14 +147,28 @@ export const Contact = (props) => {
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
-                {emailStatus.message && (
-                  <div className={`alert ${emailStatus.type === 'success' ? 'alert-success' : 'alert-danger'}`} style={{marginBottom: '20px'}}>
-                    {emailStatus.message}
-                  </div>
-                )}
                 <button type="submit" className="btn btn-custom btn-lg">
                   Send Message
                 </button>
+                {emailStatus.message && (
+                  <div className={`alert ${emailStatus.type === 'success' ? 'alert-success' : 'alert-danger'}`} style={{
+                    marginTop: '20px',
+                    padding: '15px 20px',
+                    borderRadius: '5px',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
+                  }}>
+                    {emailStatus.type === 'success' && (
+                      <i className="fa fa-check-circle" style={{fontSize: '18px'}}></i>
+                    )}
+                    {emailStatus.type === 'error' && (
+                      <i className="fa fa-exclamation-circle" style={{fontSize: '18px'}}></i>
+                    )}
+                    <span>{emailStatus.message}</span>
+                  </div>
+                )}
               </form>
             </div>
           </div>
@@ -175,39 +199,6 @@ export const Contact = (props) => {
               </p>
             </div>
           </div>
-          <div className="col-md-12">
-            <div className="row">
-              <div className="social">
-                <ul>
-                  <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.linkedin : "/"}>
-                      <i className="fa fa-linkedin"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="footer">
-        <div className="container text-center">
-          <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
-          </p>
         </div>
       </div>
     </div>
