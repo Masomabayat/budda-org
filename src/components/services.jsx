@@ -1,4 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+
+const ReadMoreText = ({ text, maxLength = 100 }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  if (!text) return null;
+  
+  if (text.length <= maxLength) {
+    return <p>{text}</p>;
+  }
+  
+  const truncatedText = text.substring(0, maxLength);
+  
+  return (
+    <p>
+      {isExpanded ? text : `${truncatedText}...`}
+      <span
+        onClick={() => setIsExpanded(!isExpanded)}
+        style={{
+          color: "#359E88",
+          cursor: "pointer",
+          marginLeft: "5px",
+          fontWeight: 500,
+          textDecoration: "underline"
+        }}
+      >
+        {isExpanded ? " see less" : " see more"}
+      </span>
+    </p>
+  );
+};
 
 export const Services = (props) => {
   return (
@@ -18,7 +48,7 @@ export const Services = (props) => {
                   <i className={d.icon}></i>
                   <div className="service-desc">
                     <h3>{d.name}</h3>
-                    <p>{d.text}</p>
+                    <ReadMoreText text={d.text} maxLength={120} />
                   </div>
                 </div>
               ))

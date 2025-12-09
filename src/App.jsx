@@ -6,15 +6,17 @@ import { Header } from "./components/header";
 import { Features } from "./components/features";
 import { About } from "./components/about";
 import { Services } from "./components/services";
-import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
+// import { Gallery } from "./components/gallery";
+// import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 // import { PastActivities } from "./components/pastActivities";
 import PastActivitiesPage from "./pages/PastActivitiesPage";
+import StoryPage from "./pages/StoryPage";
 import { Contact } from "./components/contact";
 import RegistrationForm from "./components/regestrationForm";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
+import RegistrationPage from "./pages/RegistrationPage";
 
 import "./App.css";
 
@@ -61,7 +63,9 @@ const App = () => {
       <Navigation onOpenRegistrationForm={openRegistrationForm} />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/past-activities" element={<PastActivitiesPage />} />
+        <Route path="/story" element={<StoryPage />} />
       </Routes>
       <RegistrationForm 
         isOpen={isRegistrationFormOpen} 

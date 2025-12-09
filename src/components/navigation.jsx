@@ -28,6 +28,53 @@ export const Navigation = ({ onOpenRegistrationForm }) => {
     // eslint-disable-next-line
   }, [location.pathname, lastScrollY]);
 
+  // Handle menu open/close for overlay
+  useEffect(() => {
+    const checkMenuState = () => {
+      const menuCollapse = document.getElementById('bs-example-navbar-collapse-1');
+      if (menuCollapse) {
+        const isOpen = menuCollapse.classList.contains('in');
+        if (isOpen) {
+          document.body.classList.add('menu-open');
+        } else {
+          document.body.classList.remove('menu-open');
+        }
+      }
+    };
+
+    // Use MutationObserver to watch for class changes
+    const menuCollapse = document.getElementById('bs-example-navbar-collapse-1');
+    if (menuCollapse) {
+      const observer = new MutationObserver(checkMenuState);
+      observer.observe(menuCollapse, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+
+      // Close menu when clicking overlay
+      const handleOverlayClick = (e) => {
+        if (document.body.classList.contains('menu-open')) {
+          // Check if click is on the overlay (body's ::after pseudo-element area)
+          const menuButton = document.querySelector('.navbar-toggle');
+          if (menuButton && !menuButton.classList.contains('collapsed')) {
+            menuButton.click();
+          }
+        }
+      };
+
+      // Use setTimeout to ensure overlay is rendered
+      setTimeout(() => {
+        document.addEventListener('click', handleOverlayClick, true);
+      }, 100);
+
+      return () => {
+        observer.disconnect();
+        document.removeEventListener('click', handleOverlayClick, true);
+        document.body.classList.remove('menu-open');
+      };
+    }
+  }, []);
+
   return (
     <nav
       id="menu"
@@ -41,100 +88,117 @@ export const Navigation = ({ onOpenRegistrationForm }) => {
       }}
     >
       <div className="container">
-        {/* <div className="navbar-header"> */}
+        <div className="navbar-header">
+          <NavLink className="navbar-brand page-scroll" to="/">
+            <img
+              src="/img/budda-logo.png"
+              alt="Budda Logo"
+            />
+          </NavLink>
           <button
             type="button"
             className="navbar-toggle collapsed"
             data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
-          <NavLink className="navbar-brand page-scroll" to="/">
-            <img
-              src="/img/budda-logo.png"
-              alt="Budda Logo"
-              style={{ width: "auto", height: "inherit" }}
-            />
-          </NavLink>{" "}
-        {/* </div> */}
+        </div>
 
         <div
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
+          onClick={(e) => {
+            // Close menu when clicking on a link (mobile only)
+            if (window.innerWidth <= 767) {
+              const target = e.target.closest('a');
+              if (target) {
+                const menuButton = document.querySelector('.navbar-toggle');
+                if (menuButton && !menuButton.classList.contains('collapsed')) {
+                  setTimeout(() => {
+                    menuButton.click();
+                  }, 100);
+                }
+              }
+            }
+          }}
         >
           <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href="#features" className="page-scroll">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="page-scroll">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="page-scroll">
-                Services
-              </a>
-            </li>
-            {/* <li>
-              <a href="#portfolio" className="page-scroll">
-                Gallery
-              </a>
-            </li> */}
-            {/* <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li> */}
-            <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#" 
-                className="page-scroll"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onOpenRegistrationForm();
-                }}
+            {/* Primary menu items - shown first in mobile */}
+            <li className="menu-primary">
+              <NavLink
+                to="/registration"
+                className={({ isActive }) =>
+                  `page-scroll${isActive ? " active" : ""}`
+                }
               >
-                Regestration Form
-              </a>
+                Registration Form
+              </NavLink>
             </li>
-            <li>
+            <li className="menu-primary">
               <NavLink
                 to="/past-activities"
                 className={({ isActive }) =>
                   `page-scroll${isActive ? " active" : ""}`
                 }
-                style={({ isActive }) =>
-                  isActive
-                    ? {
-                        borderBottom: "linear-gradient(to right, #004138 0%, #359E88 100%)",
-                        color: "#608dfd",
-                        fontWeight: 700,
-                        textDecoration: "none"
-                      }
-                    : {}
-                }
               >
                 Past Activities
               </NavLink>
             </li>
+            <li className="menu-primary">
+              <NavLink
+                to="/story"
+                className={({ isActive }) =>
+                  `page-scroll${isActive ? " active" : ""}`
+                }
+              >
+                Story
+              </NavLink>
+            </li>
+            {/* Secondary menu items - shown after primary items */}
+            {location.pathname !== "/registration" && location.pathname !== "/past-activities" && location.pathname !== "/story" && (
+              <>
+                <li className="menu-secondary">
+                  <a href="#features" className="page-scroll">
+                    Features
+                  </a>
+                </li>
+                <li className="menu-secondary">
+                  <a href="#about" className="page-scroll">
+                    About
+                  </a>
+                </li>
+                <li className="menu-secondary">
+                  <a href="#services" className="page-scroll">
+                    Services
+                  </a>
+                </li>
+                {/* <li className="menu-secondary">
+                  <a href="#portfolio" className="page-scroll">
+                    Gallery
+                  </a>
+                </li> */}
+                {/* <li className="menu-secondary">
+                  <a href="#testimonials" className="page-scroll">
+                    Testimonials
+                  </a>
+                </li> */}
+                <li className="menu-secondary">
+                  <a href="#team" className="page-scroll">
+                    Team
+                  </a>
+                </li>
+                <li className="menu-secondary">
+                  <a href="#contact" className="page-scroll">
+                    Contact
+                  </a>
+                </li>
+              </>
+            )}
           </ul>   
         </div>
       </div>
