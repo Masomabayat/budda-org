@@ -37,7 +37,7 @@ export const Services = (props) => {
         <div className="section-title">
           <h2>Our Services</h2>
           <p>
-          Budha Bridge provides educational support, scholarship coaching, and capacity-building programs to help individuals unlock opportunities and lead meaningful change.
+          Buddha Bridge provides educational support, scholarship coaching, and capacity-building programs to help individuals unlock opportunities and lead meaningful change.
           </p>
         </div>
         <div className="row">

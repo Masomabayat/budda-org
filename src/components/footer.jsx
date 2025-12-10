@@ -8,7 +8,7 @@ export const Footer = (props) => {
           <div className="row footer-content">
             <div className="footer-logo">
               <a href={props.data?.instagram || "#"} target="_blank" rel="noopener noreferrer">
-                <img src="/img/budda-logo.png" alt="Budha Logo" style={{width: 'auto', height: '100px'}}/>
+                <img src="/img/budda-logo.png" alt="Buddha Logo" style={{width: 'auto', height: '100px'}}/>
               </a>
             </div>
             <div className="social">

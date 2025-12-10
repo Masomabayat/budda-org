@@ -300,7 +300,7 @@ export default function RegistrationPage() {
     }
 
     const templateParams = {
-      to_email: "info@budhabridge.org",
+      to_email: "buddhabridge.24@gmail.com",
       full_name: form.fullName,
       email: form.email,
       phone: form.phone,
