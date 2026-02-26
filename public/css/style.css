@@ -239,8 +239,27 @@ hr {
   background-color: #1e7a46;
 }
 
-/* Slide-in menu from right */
+/* Mobile: hamburger on the right, menu slides out from right */
 @media screen and (max-width: 767px) {
+  /* Hamburger button on the right */
+  #menu .navbar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  #menu .navbar-header .navbar-brand {
+    order: 1;
+    margin-right: auto;
+  }
+  #menu .navbar-header .navbar-toggle {
+    order: 2;
+    margin-left: auto;
+    margin-right: 0;
+    float: none;
+  }
+
   /* Overlay backdrop */
   body.menu-open {
     overflow: hidden;
@@ -263,10 +282,12 @@ hr {
     to { opacity: 1; }
   }
   
+  /* Menu panel: off-screen to the right when closed, slides in from right when open */
   #menu .navbar-collapse {
     position: fixed;
     top: 80px;
     right: -100%;
+    left: auto;
     width: 80%;
     max-width: 320px;
     max-height: calc(100vh - 80px);
@@ -394,7 +415,6 @@ hr {
 }
 .section-title p {
   font-size: 18px;
-  color: #fff;
 }
 .btn-custom {
   font-family: "Raleway", sans-serif;
