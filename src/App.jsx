@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
@@ -48,6 +48,22 @@ const HomePage = () => {
   );
 };
 
+// When the app is loaded via 404.html (e.g. GitHub Pages), restore the requested path
+const RedirectFrom404 = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const redirect = sessionStorage.redirect;
+    if (redirect) {
+      delete sessionStorage.redirect;
+      const path = redirect.replace(window.location.origin, "") || "/";
+      if (path !== window.location.pathname) {
+        navigate(path.replace(/^\/?#?\/?/, "/"), { replace: true });
+      }
+    }
+  }, [navigate]);
+  return null;
+};
+
 const App = () => {
   const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
   const [landingPageData, setLandingPageData] = useState({});
@@ -66,6 +82,7 @@ const App = () => {
 
   return (
     <Router>
+      <RedirectFrom404 />
       <Navigation onOpenRegistrationForm={openRegistrationForm} />
       <Routes>
         <Route path="/" element={<HomePage />} />
